@@ -5,6 +5,11 @@ Welcome to the repository for the Learning Rhythms project! This project is part
 Learning Rhythms is a project aimed at creating an engaging learning environment for students to explore and master the fundamentals of musical rhythms. By leveraging innovative UI design principles, we aim to make learning rhythms accessible and fun for everyone.
 
 ## Project Setup
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/JittisaK11/UI-design-project.git
+   cd UI-design-project
+   ```
 
 
 ## Contributing
