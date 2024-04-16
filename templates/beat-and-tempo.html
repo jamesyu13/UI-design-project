@@ -9,7 +9,13 @@
         <button id="button3">Rhythm</button>
     </div>
     <p id="display-area"></p>
+    
 </div>
+
+<script>
+    var tempoURL = "{{ url_for('common') }}";
+</script>
+<script src="{{ url_for('static', filename='js/learn.js') }}"></script>
 
 {% endblock %}
 

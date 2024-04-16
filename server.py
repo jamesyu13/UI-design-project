@@ -36,23 +36,6 @@ def main():
 def quiz():
     return render_template('quiz.html')
 
-@app.route('/quiz<int:id>', methods=['GET', 'POST'])
-def quiz_id(id):
-    # Constructs the filename based on the quiz ID
-    quiz_file = f'quiz{id}.html'
-    return render_template(quiz_file)
-
-# Function to reset the score to 0
-@app.route('/reset_score', methods=['POST'])
-def reset_score():
-    session['score'] = 0
-    return jsonify({'message': 'Score reset successfully'})
-
-# Function to add 1 point to the score
-@app.route('/add_point', methods=['POST'])
-def add_point():
-    session['score'] += 1
-    return jsonify({'message': 'Point added successfully'})
 
 if __name__ == '__main__':
    app.run(debug=True)
