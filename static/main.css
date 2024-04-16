@@ -20,3 +20,26 @@
 .container {
     padding: 20px;
 }
+
+/* grid */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Creates three columns of equal size */
+    grid-gap: 10px; /* Spacing between columns */
+    padding: 10px;
+}
+
+.grid-item {
+    background-color: #f0f0f0; /* Light grey background for each column */
+    border: 1px solid #ccc; /* Grey border */
+    padding: 20px;
+    text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* Stack the columns on smaller screens */
+    }
+}

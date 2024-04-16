@@ -30,5 +30,10 @@ def subdividing():
 def quiz():
     return render_template('quiz.html')
 
+@app.route('/common-tempo')
+def common():
+    return render_template('common-tempo.html')
+ 
+
 if __name__ == '__main__':
    app.run(debug = True)
