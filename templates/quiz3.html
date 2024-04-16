@@ -62,6 +62,35 @@
             height: auto;  /* Height adjusts according to the aspect ratio */
             margin: 10px;  /* Spacing between images */
         }
+
+        .grid-container {
+            width: 50%;
+            display: grid;
+            grid-template-columns: repeat(16, 1fr); /* Adjust the number of columns as needed */
+            gap: 8px; /* Space between grid items */
+        }
+        .grid-item {
+            border: 1px solid black; /* Border to visualize the grid item */
+            height: 50px; /* Fixed height, adjust as needed */
+        }
+        /* Color classes for different grid items */
+        .blue { background-color: #87CEEB; }
+        .green { background-color: #98FB98; }
+        .yellow { background-color: #FFFF99; }
+        .orange { background-color: #FFA500; }
+        .red { background-color: #F08080; }
+
+        /* Adjust the size of individual grid items based on the desired span */
+        .grid-item.span-2 { grid-column: span 2; }
+        .grid-item.span-4 { grid-column: span 4; }
+        .grid-item.span-8 { grid-column: span 8; }
+        .grid-item.span-16 { grid-column: span 16; }
+
+        #quiz3-solution-img {
+            width: 50%;
+            visibility: hidden;
+        }
+
     </style>
 </head>
 <body>
@@ -73,13 +102,62 @@
     </div>
     <div class="container">
         <p>Question 3) Drag and drop the correct note symbols for the corresponding duration blocks.</p>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Music-wholenote.svg" alt="whole note">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Music-halfnote.svg" alt="half note">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Music-quarternote.svg" alt="quarter note">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/Eighth_Note.JPG" alt="eighth note">
+        <div class="notes-container">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Music-wholenote.svg" alt="whole note">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Music-halfnote.svg" alt="half note">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Music-quarternote.svg" alt="quarter note">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/Eighth_Note.JPG" alt="eighth note">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/Music-sixteenthnote.svg" alt="sixteenth note">
+        </div>
+        <div class="grid-container">
+            <!-- Row 1 -->
+            <div class="grid-item blue span-16"></div>
+            
+            <!-- Row 2 -->
+            <div class="grid-item green span-8"></div>
+            <div class="grid-item green span-8"></div>
+            
+            <!-- Row 3 -->
+            <div class="grid-item yellow span-4"></div>
+            <div class="grid-item yellow span-4"></div>
+            <div class="grid-item yellow span-4"></div>
+            <div class="grid-item yellow span-4"></div>
+            
+            <!-- Row 4 -->
+            <div class="grid-item orange span-2"></div>
+            <div class="grid-item orange span-2"></div>
+            <div class="grid-item orange span-2"></div>
+            <div class="grid-item orange span-2"></div>
+            <div class="grid-item orange span-2"></div>
+            <div class="grid-item orange span-2"></div>
+            <div class="grid-item orange span-2"></div>
+            <div class="grid-item orange span-2"></div>
+            
+            <!-- Row 5 -->
+            <div class="grid-item red"></div>
+            <div class="grid-item red"></div>
+            <div class="grid-item red"></div>
+            <div class="grid-item red"></div>
+            <div class="grid-item red"></div>
+            <div class="grid-item red"></div>
+            <div class="grid-item red"></div>
+            <div class="grid-item red"></div>
+            <div class="grid-item red"></div>
+            <div class="grid-item red"></div>
+            <div class="grid-item red"></div>
+            <div class="grid-item red"></div>
+            <div class="grid-item red"></div>
+            <div class="grid-item red"></div>
+            <div class="grid-item red"></div>
+            <div class="grid-item red"></div>
+        </div>
+
     </div>
+    
+    <img id="quiz3-solution-img" src="{{ url_for('static', filename='quiz3_1.png') }}">
+
     <div class="next-button">
-        <a href="quiz3">Next</a>
+        <a href="quiz4">Next</a>
     </div>
 </body>
 </html>

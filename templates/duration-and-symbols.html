@@ -1,0 +1,60 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+  <head>
+  <script>
+  function playNoteSound(note) {
+    var audio = new Audio(note + '.mp3'); // Replace with your actual audio file paths
+    audio.play();
+  }
+  </script>
+  </head>
+  <body>
+
+  <div class="content">
+    <h2>Note Symbols</h2>
+    <p>Some common note symbols and their durations are shown here.</p>
+    <p>To make sense of them, think about dividing a measure into halves, quarters, eighths, and sixteenths.</p>
+    <br>
+    <!-- Visualization and play buttons here -->
+    <div class="row">
+        <div class="col-md-6">
+            <img src="/static/musical_notes.jpg" alt="musical notes chart" width="90%">
+    
+      
+        </div>
+    
+        <div class="col-md-6">
+            <div>
+                <button onclick="playNoteSound('whole-note')">Play Whole Note</button>
+            </div>
+            <br>
+            <div>
+                <button onclick="playNoteSound('whole-note')">Play Half Note</button>
+            </div>
+            <br>
+            <div>
+                <button onclick="playNoteSound('whole-note')">Play Quarter Note</button>
+            </div>
+            <br>
+            <div>
+                <button onclick="playNoteSound('whole-note')">Play Eighth Note</button>
+            </div>
+            <br>
+            <div>
+                <button onclick="playNoteSound('whole-note')">Play Sixteenth Note</button>
+            </div>
+            
+            
+        </div>
+    </div>
+    
+    <br>
+    <br>
+    <!-- Navigation Buttons -->
+    <a href="beat-and-tempo.html" class="nav-button">Back</a>
+    <a href="duration-and-symbols-2.html" class="nav-button">Next</a>
+  </div>
+
+  </body>
+{% endblock %}
