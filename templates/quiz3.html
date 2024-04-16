@@ -86,6 +86,11 @@
         .grid-item.span-8 { grid-column: span 8; }
         .grid-item.span-16 { grid-column: span 16; }
 
+        #quiz3-solution-img {
+            width: 50%;
+            visibility: hidden;
+        }
+
     </style>
 </head>
 <body>
@@ -148,8 +153,11 @@
         </div>
 
     </div>
+    
+    <img id="quiz3-solution-img" src="{{ url_for('static', filename='quiz3_1.png') }}">
+
     <div class="next-button">
-        <a href="quiz3">Next</a>
+        <a href="quiz4">Next</a>
     </div>
 </body>
 </html>
