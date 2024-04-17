@@ -30,7 +30,7 @@ def main():
     # Set initial score to 0 if it doesn't exist in session
     if 'score' not in session:
         session['score'] = 0
-    return render_template('index.html')
+    return render_template('home.html')
 
 @app.route('/quiz', methods=['GET', 'POST'])
 def quiz():
