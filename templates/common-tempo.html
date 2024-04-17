@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>Common Tempos</h1>
+    <p> There are standard tempo terms that are used in music. They let us know the general pace of the the piece of music.
+
+        Tempo terms are typically conveyed through Italian words, and can be specified by a certain beats per minute (BPM) range.
+        
+        Learn some common ones here:</p>
+    <div class="grid-container">
+        <div class="grid-item">Adagio
+            <audio controls src="/media/cc0-audio/t-rex-roar.mp3"></audio></div>
+        <div class="grid-item">Andante
+            <audio controls src="/media/cc0-audio/t-rex-roar.mp3"></audio></div>
+        <div class="grid-item">Allegro
+            <audio controls src="/media/cc0-audio/t-rex-roar.mp3"></audio></div>
+    </div>
+    <a href="{{ url_for('beat_and_tempo') }}">Take Me Back</a>
+    
+</div>
+
+{% endblock %}
