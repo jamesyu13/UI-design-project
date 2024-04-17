@@ -13,6 +13,10 @@ def home():
 def beat_and_tempo():
     return render_template('beat-and-tempo.html')
 
+@app.route('/common-tempo')
+def common():
+   return render_template('common-tempo.html')
+
 # Duration and Symbols page route
 @app.route('/duration-and-symbols')
 def duration_and_symbols():
