@@ -1,91 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elements of Rhythm</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        .navbar {
-            overflow: hidden;
-            background-color: #8eadd4;
-        }
-        .navbar a {
-            float: left;
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
-        .navbar a:hover {
-            background-color: #ddd;
-            color: black;
-        }
-        .container {
-            padding: 20px;
-        }
-        .row {
-            display: flex;  /* Utilizing Flexbox */
-            justify-content: space-around;  /* Even spacing */
-            align-items: center;  /* Align vertically */
-        }
-        .drop-container {
-            flex: 1;  /* Each container will flexibly take up equal space */
-            margin: 10px;  /* Margin for spacing between containers */
-            text-align: center;
-            padding: 20px;
-            background-color: #f4f4f4;
-            border: 1px solid #ddd;
-            box-sizing: border-box;
-        }
-        .next-button {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .next-button a {
-            padding: 10px 20px;
-            background-color: #8eadd4;
-            color: white;
-            text-decoration: none;
-        }
-        .next-button a:hover {
-            background-color: #ddd;
-            color: black;
-        }
-    </style>
-</head>
-<body>
-    <div class="navbar">
-        <a href="beat-and-tempo">Beat and Tempo</a>
-        <a href="duration-and-symbols">Duration and Symbols</a>
-        <a href="subdividing">Subdividing</a>
-        <a href="quiz">Quiz</a>
-    </div>
+<!-- quiz.html -->
+{% extends "layout.html" %}
 
+{% block title %}
+Elements of Rhythm
+{% endblock %}
 
-    <!-- Container for quiz content -->
-    <div class="container">
-        <!-- Display the current score of the user -->
-        <p>Score: <span id="user-score">0</span></p>
+{% block content %}
+<style>
+    .row {
+        display: flex; /* Utilizing Flexbox */
+        justify-content: space-evenly; /* Even spacing */
+        align-items: center; /* Align vertically */
+    }
+    .match-button, .video-button {
+        margin: 5px;
+        margin-bottom: 50px;
+    }
+    iframe {
+        display: block; /* Remove default inline display of iframes */
+        margin: 10px 0; /* Provide some spacing above and below the video */
+        width: 100%;
+        height: auto;
+    }
+</style>
+<!-- Content specific to quiz.html -->
+<p>Score: <span id="user-score">0</span></p>
 
         <!-- Quiz question and content -->
             <p>Question 1) Match these songs to the tempo terms by clicking on the buttons below the videos.</p>
             <div class="row">
+                <button class="match-button" id="button-adagio">Adagio</button>
+                <button class="match-button" id="button-andante">Andante</button>
+                <button class="match-button" id="button-allegro">Allegro</button>
+            </div>
+            <div class="row">
                 <div>
-                    <button class="match-button" id="button-adagio">Adagio</button>
                     <iframe class="video" width="420" height="315" src="https://www.youtube.com/embed/02AlIVN0pEA"></iframe>
                     <button class="video-button" id="video-button-1" disabled>Video 1</button>
                 </div>
                 <div>
-                    <button class="match-button" id="button-andante">Andante</button>
                     <iframe class="video" width="420" height="315" src="https://www.youtube.com/embed/p_ftrysaMHU"></iframe>
                     <button class="video-button" id="video-button-2" disabled>Video 2</button>
                 </div>
                 <div>
-                    <button class="match-button" id="button-allegro">Allegro</button>
                     <iframe class="video" width="420" height="315" src="https://www.youtube.com/embed/2-cq6rjs3XY&t=18s"></iframe>
                     <button class="video-button" id="video-button-3" disabled>Video 3</button>
                 </div>
@@ -94,8 +51,9 @@
             <div class="next-button">
                 <a href="quiz2" id="next-button">Next</a>
             </div>
-                <!-- JavaScript code -->
-                <script>
+<!-- Include more content such as your quiz question, options, etc. -->
+
+<script src="{{ url_for('static', filename='quiz_script.js') }}">
                     document.addEventListener("DOMContentLoaded", function() {
                         const adagioButton = document.getElementById("button-adagio");
                         const andanteButton = document.getElementById("button-andante");
@@ -175,6 +133,6 @@
                             });
                         });
                         });
-                </script>
-</body>
-</html>
+</script>
+
+{% endblock %}
