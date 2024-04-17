@@ -1,37 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elements of Rhythm</title>
+{% extends "layout.html" %}
+
+
+{% block content %}
     <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        .navbar {
-            overflow: hidden;
-            background-color: #8eadd4;
-        }
-        .navbar a {
-            float: left;
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
-        .navbar a:hover {
-            background-color: #ddd;
-            color: black;
-        }
-        .container {
-            padding: 20px;
-        }
-        .row {
-            display: flex;  /* Utilizing Flexbox */
-            justify-content: space-around;  /* Even spacing */
-            align-items: center;  /* Align vertically */
-        }
         .drop-container {
             flex: 1;  /* Each container will flexibly take up equal space */
             margin: 10px;  /* Margin for spacing between containers */
@@ -41,29 +12,8 @@
             border: 1px solid #ddd;
             box-sizing: border-box;
         }
-        .next-button {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .next-button a {
-            padding: 10px 20px;
-            background-color: #8eadd4;
-            color: white;
-            text-decoration: none;
-        }
-        .next-button a:hover {
-            background-color: #ddd;
-            color: black;
-        }
     </style>
-</head>
-<body>
-    <div class="navbar">
-        <a href="beat-and-tempo">Beat and Tempo</a>
-        <a href="duration-and-symbols">Duration and Symbols</a>
-        <a href="subdividing">Subdividing</a>
-        <a href="quiz">Quiz</a>
-    </div>
+
     <div class="container">
         <p>Question 2) Which of these songs feature an upbeat tempo vs. downbeat tempo?
         </p>
@@ -72,8 +22,8 @@
             <div class="drop-container" id="drop-container-downbeat">Downbeat</div>
         </div>
         <div class="row">
-        <iframe class="drop-container" width="420" height="315" src="https://www.youtube.com/embed/02AlIVN0pEA"></iframe>
-        <iframe class="drop-container" width="420" height="315" src="https://www.youtube.com/embed/p_ftrysaMHU"></iframe>
+        <iframe class="drop-container" width="420" height="315" src="https://www.youtube.com/embed/mq28D0-0W1g"></iframe>
+        <iframe class="drop-container" width="420" height="315" src="https://www.youtube.com/embed/oXoduUJ5Q_8"></iframe>
        
         
 
@@ -81,5 +31,6 @@
     <div class="next-button">
         <a href="quiz3">Next</a>
     </div>
-</body>
-</html>
+    
+{% endblock %}
+
